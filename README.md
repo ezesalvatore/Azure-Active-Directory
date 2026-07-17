@@ -2,8 +2,6 @@
 
 ---
 
-## https://www.loom.com/share/48a2dcb56e714944afab0257b22dd654
-
 Overview
 
 Provisioned a Windows Server 2025 VM in Azure and promoted it to a domain controller, standing up a new Active Directory forest at `lab.local` with the DC also serving as DNS. Built out the OU structure and security groups, separating policy targeting (OUs) from resource access (groups), then automated user account creation with PowerShell (`New-ADUser`, scoped into the right OU via `-Path`). Configured and linked GPOs to enforce security controls like RDP logon rights and inactivity-based screen lock. Deployed a second VM (`aliceVM635`), fixed DNS resolution so it could find `lab.local`, joined it to the domain, and moved its computer object into the correct OU to bring it into policy scope. Verified the whole build end to end with a live RDP session, confirming group-based access control and automatic session lockout on idle, proof the GPOs were actually reaching a real machine and user, not just linked in AD.
