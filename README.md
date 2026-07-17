@@ -10,7 +10,8 @@ Provisioned a Windows Server 2025 VM in Azure and promoted it to a domain contro
 
 ### Provisioning the environment
 
-!image.png
+<img width="867" height="892" alt="image" src="https://github.com/user-attachments/assets/2fd587b8-80cd-433c-a288-30bec554276e" />
+
 
 **Purpose:** 
 
