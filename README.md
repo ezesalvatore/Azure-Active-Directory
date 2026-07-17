@@ -12,7 +12,6 @@ Provisioned a Windows Server 2025 VM in Azure and promoted it to a domain contro
 
 <img width="867" height="892" alt="image" src="https://github.com/user-attachments/assets/2fd587b8-80cd-433c-a288-30bec554276e" />
 
-
 **Purpose:** 
 
 This is the Azure portal VM creation screen. I'm provisioning a Windows Server 2025 Datacenter VM in West US, this virtual machine is what I'll promote into my domain controller and build the rest of the Active Directory environment on top of.
@@ -21,11 +20,11 @@ This is the Azure portal VM creation screen. I'm provisioning a Windows Server 2
 
 ### Creation of Azure Active Directory
 
-!image.png
+<img width="1256" height="503" alt="image" src="https://github.com/user-attachments/assets/cf3d562b-1625-48da-a2a4-e6634ee520eb" />
 
-!image.png
+<img width="1241" height="372" alt="image" src="https://github.com/user-attachments/assets/8b2682ec-eda5-4d74-b106-093e34134b06" />
 
-!image.png
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
 
 **Purpose:** 
 
@@ -37,9 +36,9 @@ I ran the PowerShell scripts to automate the process of creating the Active Dire
 
 ### **Server to a Domain Controller**
 
-!image.png
+<img width="1267" height="430" alt="image" src="https://github.com/user-attachments/assets/bac33593-f5eb-478b-a80b-2fc99c6d4bf6" />
 
-!image.png
+<img width="1085" height="236" alt="image" src="https://github.com/user-attachments/assets/e20e2a33-1367-43f6-a75e-31192e30b25f" />
 
 **Purpose:** 
 
@@ -58,11 +57,12 @@ The Safe Mode Administrator Password is a separate credential used only for Dire
 
 ### **Build the Organizational Structure and Security Groups**
 
-!image.png
+<img width="1311" height="674" alt="image" src="https://github.com/user-attachments/assets/6c0e4c7f-e982-4881-b416-4204192d28e3" />
 
-!image.png
+<img width="1550" height="761" alt="image" src="https://github.com/user-attachments/assets/9b8f4c3f-d18d-4666-97a0-0a0e1083b09e" />
 
-!image.png
+<img width="941" height="661" alt="image" src="https://github.com/user-attachments/assets/4f1520dc-8afe-4261-840f-48e92df7e8d0" />
+
 
 **Purpose:**
 
@@ -74,9 +74,9 @@ Security groups serve a related but different purpose: controlling access to res
 
 ### **Create User Accounts**
 
-!image.png
+<img width="886" height="1140" alt="image" src="https://github.com/user-attachments/assets/ee32436a-8bb4-4e9d-a2d8-e5f430af8de9" />
 
-!image.png
+<img width="941" height="661" alt="image" src="https://github.com/user-attachments/assets/9aeafc81-e3dc-48e9-8efe-f0344588456c" />
 
 **Purpose:** 
 
@@ -91,11 +91,11 @@ Two parameters work together to make the account usable:
 
 ### **Configure Group Policy**
 
-!image.png
+<img width="1317" height="706" alt="image" src="https://github.com/user-attachments/assets/9718ed71-524d-4a8c-9fdc-5d23dfad55c0" />
 
-!image.png
+<img width="1317" height="706" alt="image" src="https://github.com/user-attachments/assets/53329258-fe09-49ca-8b67-0c1105a82c2e" />
 
-!image.png
+<img width="1317" height="706" alt="image" src="https://github.com/user-attachments/assets/c987611e-09d8-461f-9ceb-6d6f49d4f2be" />
 
 **Purpose:**
 
@@ -105,11 +105,11 @@ Group Policy is how settings get enforced across every machine and user in the d
 
 ### **Configuring Second Virtual Machine**
 
-!image.png
+<img width="1181" height="218" alt="image" src="https://github.com/user-attachments/assets/7af04124-c00c-45ef-b434-508aea568817" />
 
-!image.png
+<img width="1920" height="989" alt="image" src="https://github.com/user-attachments/assets/d0043370-a194-4735-be9d-970df962e626" />
 
-!image.png
+<img width="943" height="663" alt="image" src="https://github.com/user-attachments/assets/67dca6fd-4dbe-4ceb-9475-b8e58d19b4a1" />
 
 **Purpose:** A Domain Controller isn't meant to double as a general endpoint for testing user policy, so a second VM was needed to confirm a GPO reaches a real machine and user, not just that it's linked in AD.
 
@@ -121,11 +121,11 @@ After joining `aliceVM` to the domain, its computer object was moved on the DC i
 
 ### Proof of GPO Application: Live RDP Session
 
-!image.png
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cf9d580c-3d7a-46eb-a3fc-c64d79ec5896" />
 
-!image.png
+<img width="1115" height="628" alt="image" src="https://github.com/user-attachments/assets/7fe8c681-a9e6-4e62-8efa-98f2aab4258a" />
 
-!image.png
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8dfa04fa-3681-4422-8791-396d8e65c6a5" />
 
 **Purpose:** This GPO grants the `IT_Admins` group RDP access to `aliceVM635` through the "Allow log on through Remote Desktop Services" user right, confirmed by group membership carrying into a fresh Kerberos ticket at logon.
 
