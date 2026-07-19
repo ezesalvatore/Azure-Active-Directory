@@ -25,7 +25,7 @@ Systems Administrator lab standing up centralized identity and access management
 ### Provisioning the environment
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/5749e4e6-d557-4e60-a2f3-05cfea2e7752" />
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/2fae9226-703b-4daa-9ae5-a83a310902ef" />
-<br>
+
 **Purpose:**
 This is the Azure portal VM creation screen, where I'm provisioning a Windows Server 2025 Datacenter VM to host the Active Directory domain controller. The configuration reflects deliberate cost and security tradeoffs for a lab environment.
 
