@@ -10,5 +10,3 @@ Install-ADDSForest `
     -InstallDns:$true `                       # Install & configure DNS on this DC
     -SafeModeAdministratorPassword (ConvertTo-SecureString 'testadmin123!' -AsPlainText -Force) `  # DSRM recovery password
     -Force:$true                              # Suppress confirmation prompts
-
-# Server will reboot automatically once promotion completes.
