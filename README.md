@@ -23,7 +23,7 @@ Systems Administrator lab standing up centralized identity and access management
 ---
 ### Provisioning the environment
 
-<img width="867" height="892" alt="image" src="https://github.com/user-attachments/assets/2fd587b8-80cd-433c-a288-30bec554276e" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2fd587b8-80cd-433c-a288-30bec554276e" />
 
 **Purpose:** 
 
