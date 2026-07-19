@@ -39,7 +39,7 @@ Public inbound ports: RDP (3389) - Security Optimization
 ---
 
 ### Creation of Azure Active Directory
-<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
+<img width="400"  alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
 
 **Purpose:**
 I ran the PowerShell scripts to automate the process of creating the Active Directory domain and installed Group Policy. Without it, you will not see the Group Policy Management option in Server Manager.
