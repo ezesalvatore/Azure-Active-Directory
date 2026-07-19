@@ -18,7 +18,7 @@ Systems Administrator lab standing up centralized identity and access management
 ---
 ### Project Architecture - Network Topology
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/66cf89db-04eb-4bc5-b1ac-9acdbe88e825" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/66cf89db-04eb-4bc5-b1ac-9acdbe88e825" />
 
 ## Phase 1 – Infrastructure Deployment
 
