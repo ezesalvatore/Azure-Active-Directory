@@ -73,13 +73,6 @@ The Safe Mode Administrator Password is a separate credential used only for Dire
 
 ### **Build the Organizational Structure and Security Groups**
 
-<img width="1311" height="674" alt="image" src="https://github.com/user-attachments/assets/6c0e4c7f-e982-4881-b416-4204192d28e3" />
-
-<img width="1550" height="761" alt="image" src="https://github.com/user-attachments/assets/9b8f4c3f-d18d-4666-97a0-0a0e1083b09e" />
-
-<img width="941" height="661" alt="image" src="https://github.com/user-attachments/assets/4f1520dc-8afe-4261-840f-48e92df7e8d0" />
-
-
 **Purpose:**
 
 An Organizational Unit (OU) is a container inside Active Directory used to organize users, computers, and groups by department, location, or function. OUs exist mainly for management and policy targeting. You link a Group Policy Object (GPO) to an OU, and every user or computer inside that OU automatically inherits it. This is how role-based access gets applied at scale instead of configuring machines one by one.
