@@ -39,10 +39,22 @@ Public inbound ports: RDP (3389) - Security Optimization
 ---
 
 ### Creation of Azure Active Directory
-<img width="400"  alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
 
 **Purpose:**
-I automated the domain controller promotion in two steps, mirroring how you'd do it manually through the "Add Roles and Features" wizard. First, `installing-AD.ps1` installs the `AD-Domain-Services` Windows feature with its management tools. Then `installing-DomainController.ps1` runs `Install-ADDSForest` to stand up a brand-new Active Directory forest rooted at `ezesalvatore.local`, with `-InstallDns:$true` so the same server also becomes the domain's DNS provider. Both scripts are in this repo under `powershellScripts/`
+Rather than clicking through the "Add Roles and Features" GUI wizard, I automated the AD DS and Group Policy Management installation with PowerShell to be easy to re-run if the environment needs to be rebuilt. Scripts live in [`powershellScript/`](./powershellScript/).
+
+​```powershell
+# installing-AD.ps1 — installs Active Directory Domain Services + management tools
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+​```
+
+​```powershell
+# installing-GPMC.ps1 — installs Group Policy Management Console
+Install-WindowsFeature -Name GPMC
+​```
+
+GPMC isn't bundled with the AD DS install by default, it's a separate Windows feature, which is why it won't appear in Server Manager until this second script runs. `-IncludeManagementTools` on the first script pulls in the GUI snap-ins.
 
 ---
 
