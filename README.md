@@ -16,32 +16,34 @@ Systems Administrator lab standing up centralized identity and access management
 - **End-to-End Validation:** Verified via live RDP session — group-based access control and idle lockout confirmed working
 
 ---
-### Project Architecture
+### Project Architecture - Network Topology
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/66cf89db-04eb-4bc5-b1ac-9acdbe88e825" />
 
----
+## Phase 1 – Infrastructure Deployment
+
 ### Provisioning the environment
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/5749e4e6-d557-4e60-a2f3-05cfea2e7752" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/2fae9226-703b-4daa-9ae5-a83a310902ef" />
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2fd587b8-80cd-433c-a288-30bec554276e" />
+**Purpose:**
+This is the Azure portal VM creation screen, where I'm provisioning a Windows Server 2025 Datacenter VM to host the Active Directory domain controller. The configuration reflects deliberate cost and security tradeoffs for a lab environment.
 
-**Purpose:** 
+Availabilty Options: No infrastructure redundancy required - Cost Optimization 
 
-This is the Azure portal VM creation screen. I'm provisioning a Windows Server 2025 Datacenter VM in West US, this virtual machine is what I'll promote into my domain controller and build the rest of the Active Directory environment on top of.
+Size: Standard_D2als_v7 - 2 vcpus, 4 GiB memory - Cost Optimization 
+
+Public inbound ports: RDP (3389) - Secuirty Optimization
 
 ---
 
 ### Creation of Azure Active Directory
-
 <img width="1256" height="503" alt="image" src="https://github.com/user-attachments/assets/cf3d562b-1625-48da-a2a4-e6634ee520eb" />
-
 <img width="1241" height="372" alt="image" src="https://github.com/user-attachments/assets/8b2682ec-eda5-4d74-b106-093e34134b06" />
-
 <img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
 
-**Purpose:** 
-
-I ran the PowerShell scripts to automate the process of creating the Active Directory domain and installed Group Policy without it, you will not see the Group Policy Management option in Server Manager
+**Purpose:**
+I ran the PowerShell scripts to automate the process of creating the Active Directory domain and installed Group Policy. Without it, you will not see the Group Policy Management option in Server Manager.
 
 ---
 
