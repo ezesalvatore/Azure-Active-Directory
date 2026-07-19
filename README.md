@@ -39,10 +39,11 @@ Public inbound ports: RDP (3389) - Security Optimization
 
 ### Creation of Azure Active Directory
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
-<br>
+
+
 **Purpose:**
 Rather than clicking through the "Add Roles and Features" GUI wizard, I automated the AD DS and Group Policy Management installation with PowerShell to be easy to re-run if the environment needs to be rebuilt. Scripts live in [`powershellScript/`](./powershellScript/).
-<br>
+
 GPMC isn't bundled with the AD DS install by default, it's a separate Windows feature, which is why it won't appear in Server Manager until this second script runs. `-IncludeManagementTools` on the first script pulls in the GUI snap-ins.
 
 ---
