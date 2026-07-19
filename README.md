@@ -26,7 +26,7 @@ Systems Administrator lab standing up centralized identity and access management
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/5749e4e6-d557-4e60-a2f3-05cfea2e7752" />
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/2fae9226-703b-4daa-9ae5-a83a310902ef" />
 
-
+<br>
 **Purpose:**
 This is the Azure portal VM creation screen, where I'm provisioning a Windows Server 2025 Datacenter VM to host the Active Directory domain controller. The configuration reflects deliberate cost and security tradeoffs for a lab environment.
 
@@ -40,20 +40,10 @@ Public inbound ports: RDP (3389) - Security Optimization
 
 ### Creation of Azure Active Directory
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
-
+<br>
 **Purpose:**
 Rather than clicking through the "Add Roles and Features" GUI wizard, I automated the AD DS and Group Policy Management installation with PowerShell to be easy to re-run if the environment needs to be rebuilt. Scripts live in [`powershellScript/`](./powershellScript/).
-
-​```powershell
-# installing-AD.ps1 — installs Active Directory Domain Services + management tools
-Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-​```
-
-​```powershell
-# installing-GPMC.ps1 — installs Group Policy Management Console
-Install-WindowsFeature -Name GPMC
-​```
-
+<br>
 GPMC isn't bundled with the AD DS install by default, it's a separate Windows feature, which is why it won't appear in Server Manager until this second script runs. `-IncludeManagementTools` on the first script pulls in the GUI snap-ins.
 
 ---
