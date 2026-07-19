@@ -42,7 +42,7 @@ Public inbound ports: RDP (3389) - Security Optimization
 <img width="400"  alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
 
 **Purpose:**
-I ran the PowerShell scripts to automate the process of creating the Active Directory domain and installed Group Policy. Without it, you will not see the Group Policy Management option in Server Manager.
+I automated the domain controller promotion in two steps, mirroring how you'd do it manually through the "Add Roles and Features" wizard. First, `installing-AD.ps1` installs the `AD-Domain-Services` Windows feature with its management tools. Then `installing-DomainController.ps1` runs `Install-ADDSForest` to stand up a brand-new Active Directory forest rooted at `ezesalvatore.local`, with `-InstallDns:$true` so the same server also becomes the domain's DNS provider. Both scripts are in this repo under `powershellScripts/`
 
 ---
 
