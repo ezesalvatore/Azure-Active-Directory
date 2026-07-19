@@ -39,8 +39,6 @@ Public inbound ports: RDP (3389) - Security Optimization
 ---
 
 ### Creation of Azure Active Directory
-<img width="1256" height="503" alt="image" src="https://github.com/user-attachments/assets/cf3d562b-1625-48da-a2a4-e6634ee520eb" />
-<img width="1241" height="372" alt="image" src="https://github.com/user-attachments/assets/8b2682ec-eda5-4d74-b106-093e34134b06" />
 <img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
 
 **Purpose:**
