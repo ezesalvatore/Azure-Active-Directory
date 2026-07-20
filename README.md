@@ -52,20 +52,18 @@ GPMC isn't bundled with the AD DS install by default, it's a separate Windows fe
 
 ### **Server to a Domain Controller**
 
-<img width="1267" height="430" alt="image" src="https://github.com/user-attachments/assets/bac33593-f5eb-478b-a80b-2fc99c6d4bf6" />
-
-<img width="1085" height="236" alt="image" src="https://github.com/user-attachments/assets/e20e2a33-1367-43f6-a75e-31192e30b25f" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/83f2b65c-bbb9-43e3-9a17-a2defd308e2b" />
 
 **Purpose:** 
 
-This command builds a brand-new Active Directory forest rooted at `lab.local` and promotes this server into its first Domain Controller.
+This command builds a brand-new Active Directory forest rooted at `ezesalvatore.local` and promotes this server into its first Domain Controller.
 
 With `-InstallDns:$true` set, the server also becomes the domain's DNS provide
 
 Once promotion completes, this server:
 
 - Hosts the AD database
-- Enforces Group Policy for any machine that joins `lab.local`
+- Enforces Group Policy for any machine that joins `ezesalvatore.local`
 
 The Safe Mode Administrator Password is a separate credential used only for Directory Services Restore Mode (DSRM) for disaster recovery
 
