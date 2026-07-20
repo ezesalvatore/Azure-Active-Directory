@@ -1,0 +1,9 @@
+# Create the top-level Organizational Units (OUs) for lab.local.
+# Each OU acts as a container — departments get their own OU so
+# users, computers, and groups can be managed and targeted by GPO separately.
+
+New-ADOrganizationalUnit -Name "IT"        -Path "DC=lab,DC=local"   # IT dept objects
+New-ADOrganizationalUnit -Name "Finance"   -Path "DC=lab,DC=local"   # Finance dept objects
+New-ADOrganizationalUnit -Name "HR"        -Path "DC=lab,DC=local"   # HR dept objects
+New-ADOrganizationalUnit -Name "Sales"     -Path "DC=lab,DC=local"   # Sales dept objects
+New-ADOrganizationalUnit -Name "Computers" -Path "DC=lab,DC=local"   # Dedicated OU for workstations/servers
