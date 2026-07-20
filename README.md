@@ -54,18 +54,18 @@ GPMC isn't bundled with the AD DS install by default, it's a separate Windows fe
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/83f2b65c-bbb9-43e3-9a17-a2defd308e2b" />
 
-**Purpose:** 
+📄 Script: [`installing-DomainController.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-DomainController.ps1)
 
+**Purpose:**
 This command builds a brand-new Active Directory forest rooted at `ezesalvatore.local` and promotes this server into its first Domain Controller.
 
-With `-InstallDns:$true` set, the server also becomes the domain's DNS provide
+With `-InstallDns:$true` set, the server also becomes the domain's DNS provider — this is how clients locate domain services and find other domain controllers.
 
 Once promotion completes, this server:
-
 - Hosts the AD database
 - Enforces Group Policy for any machine that joins `ezesalvatore.local`
 
-The Safe Mode Administrator Password is a separate credential used only for Directory Services Restore Mode (DSRM) for disaster recovery
+The Safe Mode Administrator Password is a separate credential used only for Directory Services Restore Mode (DSRM), used for disaster recovery.
 
 ---
 
