@@ -100,11 +100,11 @@ Two parameters work together to make the account usable:
 
 ### **Configure Group Policy**
 
-<img width="1317" height="706" alt="image" src="https://github.com/user-attachments/assets/9718ed71-524d-4a8c-9fdc-5d23dfad55c0" />
+<img width="400"  alt="image" src="https://github.com/user-attachments/assets/9718ed71-524d-4a8c-9fdc-5d23dfad55c0" />
 
-<img width="1317" height="706" alt="image" src="https://github.com/user-attachments/assets/53329258-fe09-49ca-8b67-0c1105a82c2e" />
+<img width="400"  alt="image" src="https://github.com/user-attachments/assets/53329258-fe09-49ca-8b67-0c1105a82c2e" />
 
-<img width="1317" height="706" alt="image" src="https://github.com/user-attachments/assets/c987611e-09d8-461f-9ceb-6d6f49d4f2be" />
+<img width="400"  alt="image" src="https://github.com/user-attachments/assets/c987611e-09d8-461f-9ceb-6d6f49d4f2be" />
 
 **Purpose:**
 
