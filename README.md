@@ -69,11 +69,17 @@ The Safe Mode Administrator Password is a separate credential used only for Dire
 
 ---
 
+## **Phase 2 – Building Out the Domain**
+
 ### **Build the Organizational Structure and Security Groups**
 
 **Purpose:**
 
+📄 Script: [`create-organizationalUnit/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-organizationalUnit)
+
 An Organizational Unit (OU) is a container inside Active Directory used to organize users, computers, and groups by department, location, or function. OUs exist mainly for management and policy targeting. You link a Group Policy Object (GPO) to an OU, and every user or computer inside that OU automatically inherits it. This is how role-based access gets applied at scale instead of configuring machines one by one.
+
+📄 Script: [`create-securityGroup/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-securityGroup)
 
 Security groups serve a related but different purpose: controlling access to resources, like file shares, printers, or applications. A user's OU determines *which policies apply to them*; their group membership determines *what they're allowed to access*.
 
@@ -81,18 +87,16 @@ Security groups serve a related but different purpose: controlling access to res
 
 ### **Create User Accounts**
 
-<img width="886" height="1140" alt="image" src="https://github.com/user-attachments/assets/ee32436a-8bb4-4e9d-a2d8-e5f430af8de9" />
-
-<img width="941" height="661" alt="image" src="https://github.com/user-attachments/assets/9aeafc81-e3dc-48e9-8efe-f0344588456c" />
-
 **Purpose:** 
 
-Creating the user with `New-ADUser` and placing it in an OU via `-Path` is what ties that account to Group Policy. GPOs are linked to OUs, not individual users — so the moment an account lands in `OU=IT`, it's automatically in scope for every policy linked there. No extra step needed; it just applies on the next Group Policy refresh or reboot.
+📄 Script: [`create-users/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-users)
+
+Creating the user with `New-ADUser` and placing it in an OU via `-Path` is what ties that account to Group Policy. GPOs are linked to OUs, not individual users, so the moment an account lands in `OU=IT`, it's automatically in scope for every policy linked there. No extra step is needed; it just applies on the next Group Policy refresh or reboot.
 
 Two parameters work together to make the account usable:
 
-- `AccountPassword` sets the credential
-- `Enabled $true` is required separately, since AD creates accounts disabled by default
+- **`AccountPassword`**: sets the credential
+- **`Enabled $true`**: required separately, since AD creates accounts disabled by default
 
 ---
 
