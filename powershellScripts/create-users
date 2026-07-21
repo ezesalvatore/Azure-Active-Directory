@@ -1,4 +1,4 @@
-# Shared temp password for all new accounts (lab only)
+# Shared temp password for all new accounts
 $password = ConvertTo-SecureString "Welcome@2026!" -AsPlainText -Force
 
 # Create users, one per department
