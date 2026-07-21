@@ -116,6 +116,7 @@ Group Policy is how settings get enforced across every machine and user in the d
 
 ### **Active Directory Logical Structure**
 
+```
 🌐 ezesalvatore.local (Domain)
 │
 ├── 📁 OU: IT
@@ -139,6 +140,7 @@ Group Policy is how settings get enforced across every machine and user in the d
 │
 └── 📁 OU: Computers
     └── 🖥️ Dedicated container for workstation/server objects
+```
     
 ---
 
