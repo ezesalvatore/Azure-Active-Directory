@@ -29,11 +29,11 @@ Systems Administrator lab standing up centralized identity and access management
 **Purpose:**
 This is the Azure portal VM creation screen, where I'm provisioning a Windows Server 2025 Datacenter VM to host the Active Directory domain controller. The configuration reflects deliberate cost and security tradeoffs for a lab environment.
 
-Availabilty Options: No infrastructure redundancy required - Cost Optimization 
+**Availabilty Options:** No infrastructure redundancy required - Cost Optimization 
 
-Size: Standard_D2als_v7 - 2 vcpus, 4 GiB memory - Cost Optimization 
+**Size:** Standard_D2als_v7 - 2 vcpus, 4 GiB memory - Cost Optimization 
 
-Public inbound ports: RDP (3389) - Security Optimization
+**Public inbound ports:** RDP (3389) - Security Optimization
 
 ---
 
@@ -141,38 +141,40 @@ Group Policy is how settings get enforced across every machine and user in the d
 └── 📁 OU: Computers
     └── 🖥️ Dedicated container for workstation/server objects
 ```
-    
 ---
+## Phase 3 – Testing the Environment
 
-### **Configuring Second Virtual Machine**
+### DNS Configuration & VNet Networking
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7af04124-c00c-45ef-b434-508aea568817" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/d0043370-a194-4735-be9d-970df962e626" />
 
-<img width="1181" height="218" alt="image" src="https://github.com/user-attachments/assets/7af04124-c00c-45ef-b434-508aea568817" />
-
-<img width="1920" height="989" alt="image" src="https://github.com/user-attachments/assets/d0043370-a194-4735-be9d-970df962e626" />
-
-<img width="943" height="663" alt="image" src="https://github.com/user-attachments/assets/67dca6fd-4dbe-4ceb-9475-b8e58d19b4a1" />
-
-**Purpose:** A Domain Controller isn't meant to double as a general endpoint for testing user policy, so a second VM was needed to confirm a GPO reaches a real machine and user, not just that it's linked in AD.
-
-`aliceVM` was deployed into the same VNet as the DC (`testVM`), enabling domain join. Since Azure VMs default to Azure DNS, which doesn't know `lab.local`, the VNet's DNS servers were set to Custom and pointed at the DC's private IP. The `nslookup lab.local` output confirmed this worked, resolving to the DC's address before domain join was even attempted.
-
-After joining `aliceVM` to the domain, its computer object was moved on the DC into the correct OU so the linked GPO would actually apply to it. This sequence (DNS, domain join, then OU placement) mirrors how GPO scoping works in a real environment.
+**Purpose:**
+`aliceVM635` was deployed into the same VNet as the domain controller (`testVM`), which is what makes domain join possible in the first place — a machine has to be network-adjacent to the DC before it can even attempt to authenticate against it. Azure VMs default to Azure-provided DNS, which has no knowledge of `ezesalvatore.local`, so the VNet's DNS settings were changed to Custom and pointed at the DC's private IP. This is the step that lets any machine on the VNet resolve the domain name to an actual server before anything else can happen.
 
 ---
 
-### Proof of GPO Application: Live RDP Session
+### Domain Join & GPO Scope
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/67dca6fd-4dbe-4ceb-9475-b8e58d19b4a1" />
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cf9d580c-3d7a-46eb-a3fc-c64d79ec5896" />
+**Purpose:**
+With DNS resolving correctly, `aliceVM635` was joined to the domain. Domain join alone isn't enough to bring a machine into policy scope, though — the computer object also had to be moved into the correct OU on the DC, since GPOs are linked to OUs, not to the domain as a whole. This sequence — **DNS → domain join → OU placement** — mirrors exactly how GPO scoping works in a real environment: without all three steps in order, the machine can join the domain but never actually pull the policy meant for it.
 
-<img width="1115" height="628" alt="image" src="https://github.com/user-attachments/assets/7fe8c681-a9e6-4e62-8efa-98f2aab4258a" />
+---
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8dfa04fa-3681-4422-8791-396d8e65c6a5" />
+### Confirming the Second VM
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/cf9d580c-3d7a-46eb-a3fc-c64d79ec5896" />
 
-**Purpose:** This GPO grants the `IT_Admins` group RDP access to `aliceVM635` through the "Allow log on through Remote Desktop Services" user right, confirmed by group membership carrying into a fresh Kerberos ticket at logon.
+**Purpose:**
+Before testing the GPO itself, I confirmed `aliceVM635` was actually in scope: correctly joined to `ezesalvatore.local` and sitting in the intended OU, so any policy linked there would apply on the next Group Policy refresh or reboot. A Domain Controller isn't meant to double as a general test endpoint, which is exactly why this second VM existed — to prove a GPO reaches a real machine and user, not just that it's linked in AD.
 
-The same GPO also applies "Interactive logon: Machine inactivity limit," set to lock the screen after 100 seconds of no activity. This is a separate security control from the RDP right itself. It forces the session to relock and require credentials again if the machine sits idle, so an authenticated session doesn't stay open indefinitely without action.
+---
 
-Together these show both halves of access control on this policy: who is allowed to remote in, and how idle sessions get automatically secured without needing manual intervention.
+### Confirmation GPO Is Working: Live RDP Session
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7fe8c681-a9e6-4e62-8efa-98f2aab4258a" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/8dfa04fa-3681-4422-8791-396d8e65c6a5" />
+
+**Purpose:**
+This GPO grants the `IT_Admins` group RDP access to `aliceVM635` through the "Allow log on through Remote Desktop Services" user right, confirmed by group membership carrying into a fresh Kerberos ticket at logon. The same GPO also applies "Interactive logon: Machine inactivity limit," set to lock the screen after 100 seconds of no activity — a separate security control from the RDP right itself, forcing the session to relock and require credentials again if the machine sits idle. Together, these confirm both halves of access control on this policy: **who** is allowed to remote in, and **how** idle sessions get automatically secured without manual intervention.
 
 ---
 
