@@ -1,8 +1,7 @@
 # Create one security group per department, nested inside its matching OU.
 # GroupScope Global = members from this domain only (standard for user/role groups)
 # GroupCategory Security = used for permissions/access, not just email distribution
-
-New-ADGroup -Name "IT_Admins"     -GroupScope Global -GroupCategory Security -Path "OU=IT,DC=lab,DC=local"        # Elevated access for IT staff
-New-ADGroup -Name "Finance_Users" -GroupScope Global -GroupCategory Security -Path "OU=Finance,DC=lab,DC=local"   # Standard access for Finance staff
-New-ADGroup -Name "HR_Users"      -GroupScope Global -GroupCategory Security -Path "OU=HR,DC=lab,DC=local"        # Standard access for HR staff
-New-ADGroup -Name "Sales_Users"   -GroupScope Global -GroupCategory Security -Path "OU=Sales,DC=lab,DC=local"     # Standard access for Sales staff
+New-ADGroup -Name "IT_Admins"     -GroupScope Global -GroupCategory Security -Path "OU=IT,DC=ezesalvatore,DC=local"        # Elevated access for IT staff
+New-ADGroup -Name "Finance_Users" -GroupScope Global -GroupCategory Security -Path "OU=Finance,DC=ezesalvatore,DC=local"   # Standard access for Finance staff
+New-ADGroup -Name "HR_Users"      -GroupScope Global -GroupCategory Security -Path "OU=HR,DC=ezesalvatore,DC=local"        # Standard access for HR staff
+New-ADGroup -Name "Sales_Users"   -GroupScope Global -GroupCategory Security -Path "OU=Sales,DC=ezesalvatore,DC=local"     # Standard access for Sales staff
