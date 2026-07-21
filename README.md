@@ -114,6 +114,34 @@ Group Policy is how settings get enforced across every machine and user in the d
 
 ---
 
+### **Active Directory Logical Structure**
+
+🌐 ezesalvatore.local (Domain)
+│
+├── 📁 OU: IT
+│   ├── 👤 alice.chen
+│   ├── 👥 Security Group: IT_Admins
+│   └── 📜 GPO (linked here)
+│       ├── 🖥️ RDP logon rights
+│       └── 🔒 Inactivity lockout
+│
+├── 📁 OU: Finance
+│   ├── 👤 bob.patel
+│   └── 👥 Security Group: Finance_Users
+│
+├── 📁 OU: HR
+│   ├── 👤 carol.jones
+│   └── 👥 Security Group: HR_Users
+│
+├── 📁 OU: Sales
+│   ├── 👤 david.smith
+│   └── 👥 Security Group: Sales_Users
+│
+└── 📁 OU: Computers
+    └── 🖥️ Dedicated container for workstation/server objects
+    
+---
+
 ### **Configuring Second Virtual Machine**
 
 <img width="1181" height="218" alt="image" src="https://github.com/user-attachments/assets/7af04124-c00c-45ef-b434-508aea568817" />
