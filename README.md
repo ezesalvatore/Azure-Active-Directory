@@ -175,7 +175,6 @@ To allow the computers to communicate with each other, I needed to make sure the
 ---
 
 ### Configuring IT_Admins can log in
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/7c455541-a312-464d-8e7c-e1b2413d83e2" />
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ba5a84cd-a111-4542-a2c0-a94879cd8ea0" />
 
