@@ -43,11 +43,11 @@ This is the Azure portal VM creation screen, where I'm provisioning a Windows Se
 
 **Purpose:**
 
-📄 Script: [`installing-AD.ps1/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-AD.ps1)
+📄 Script: [`installing-AD.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-AD.ps1)
 
 Rather than clicking through the "Add Roles and Features" GUI wizard, I automated the AD DS and Group Policy Management installation with PowerShell to be easy to re-run if the environment needs to be rebuilt. 
 
-📄 Script: [`installing-GPMC.ps1/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-GPMC.ps1)
+📄 Script: [`installing-GPMC.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-GPMC.ps1)
 
 GPMC isn't bundled with the AD DS install by default, it's a separate Windows feature, which is why it won't appear in Server Manager until this second script runs. `-IncludeManagementTools` on the first script pulls in the GUI snap-ins.
 
@@ -80,11 +80,11 @@ The Safe Mode Administrator Password is a separate credential used only for Dire
 
 **Purpose:**
 
-📄 Script: [`create-organizationalUnit/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-organizationalUnit.ps1)
+📄 Script: [`create-organizationalUnit.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-organizationalUnit.ps1)
 
 An Organizational Unit (OU) is a container inside Active Directory used to organize users, computers, and groups by department, location, or function. OUs exist mainly for management and policy targeting. You link a Group Policy Object (GPO) to an OU, and every user or computer inside that OU automatically inherits it. This is how role-based access gets applied at scale instead of configuring machines one by one.
 
-📄 Script: [`create-securityGroup/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-securityGroup.ps1)
+📄 Script: [`create-securityGroup.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-securityGroup.ps1)
 
 Security groups serve a related but different purpose: controlling access to resources, like file shares, printers, or applications. A user's OU determines *which policies apply to them*; their group membership determines *what they're allowed to access*.
 
@@ -94,7 +94,7 @@ Security groups serve a related but different purpose: controlling access to res
 
 **Purpose:** 
 
-📄 Script: [`create-users/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-users.ps1)
+📄 Script: [`create-users.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-users.ps1)
 
 Creating the user with `New-ADUser` and placing it in an OU via `-Path` is what ties that account to Group Policy. GPOs are linked to OUs, not individual users, so the moment an account lands in `OU=IT`, it's automatically in scope for every policy linked there. No extra step is needed; it just applies on the next Group Policy refresh or reboot.
 
