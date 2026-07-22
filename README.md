@@ -177,8 +177,14 @@ To allow the computers to communicate with each other, I needed to make sure the
 
 ---
 
-### Confirming the Second VM
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/cf9d580c-3d7a-46eb-a3fc-c64d79ec5896" />
+### Configuring IT_Admins can log in
+<img width="742" height="344" alt="image" src="https://github.com/user-attachments/assets/7c455541-a312-464d-8e7c-e1b2413d83e2" />
+
+<img width="742" height="344" alt="image" src="https://github.com/user-attachments/assets/ba5a84cd-a111-4542-a2c0-a94879cd8ea0" />
+
+<img width="1077" height="613" alt="image" src="https://github.com/user-attachments/assets/ff571597-2e37-4eea-904a-e59d5de8177d" />
+
+
 
 **Purpose:**
 Before testing the GPO itself, I confirmed `aliceVM635` was actually in scope: correctly joined to `ezesalvatore.local` and sitting in the intended OU, so any policy linked there would apply on the next Group Policy refresh or reboot. A Domain Controller isn't meant to double as a general test endpoint, which is exactly why this second VM existed — to prove a GPO reaches a real machine and user, not just that it's linked in AD.
