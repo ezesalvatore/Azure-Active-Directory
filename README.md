@@ -44,9 +44,11 @@ This is the Azure portal VM creation screen, where I'm provisioning a Windows Se
 **Purpose:**
 
 📄 Script: [`installing-AD.ps1/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-AD.ps1)
+
 Rather than clicking through the "Add Roles and Features" GUI wizard, I automated the AD DS and Group Policy Management installation with PowerShell to be easy to re-run if the environment needs to be rebuilt. 
 
 📄 Script: [`installing-GPMC.ps1/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-GPMC.ps1)
+
 GPMC isn't bundled with the AD DS install by default, it's a separate Windows feature, which is why it won't appear in Server Manager until this second script runs. `-IncludeManagementTools` on the first script pulls in the GUI snap-ins.
 
 ---
