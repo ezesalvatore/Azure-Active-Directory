@@ -18,13 +18,13 @@ Systems Administrator lab standing up centralized identity and access management
 ---
 ### Project Architecture - Network Topology
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/66cf89db-04eb-4bc5-b1ac-9acdbe88e825" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/66cf89db-04eb-4bc5-b1ac-9acdbe88e825" />
 
 ## Phase 1 – Infrastructure Deployment
 
 ### Provisioning the environment
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/5749e4e6-d557-4e60-a2f3-05cfea2e7752" />
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/2fae9226-703b-4daa-9ae5-a83a310902ef" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/5749e4e6-d557-4e60-a2f3-05cfea2e7752" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/2fae9226-703b-4daa-9ae5-a83a310902ef" />
 
 **Purpose:**
 This is the Azure portal VM creation screen, where I'm provisioning a Windows Server 2025 Datacenter VM to host the Active Directory domain controller. The configuration reflects deliberate cost and security tradeoffs for a lab environment.
@@ -38,7 +38,7 @@ This is the Azure portal VM creation screen, where I'm provisioning a Windows Se
 ---
 
 ### Creation of Azure Active Directory
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
 
 
 **Purpose:**
@@ -57,7 +57,7 @@ GPMC isn't bundled with the AD DS install by default, it's a separate Windows fe
 
 ### **Server to a Domain Controller**
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/83f2b65c-bbb9-43e3-9a17-a2defd308e2b" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/83f2b65c-bbb9-43e3-9a17-a2defd308e2b" />
 
 📄 Script: [`installing-DomainController.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/installing-DomainController.ps1)
 
