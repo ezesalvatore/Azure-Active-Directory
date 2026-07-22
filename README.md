@@ -186,8 +186,8 @@ Before testing the GPO itself, I confirmed `aliceVM635` was actually in scope: c
 ---
 
 ### Confirmation GPO Is Working: Live RDP Session
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/7fe8c681-a9e6-4e62-8efa-98f2aab4258a" />
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/8dfa04fa-3681-4422-8791-396d8e65c6a5" />
+<img width="1110" height="607" alt="image" src="https://github.com/user-attachments/assets/12749749-0b7d-4a10-b216-187b53b6d432" />
+
 
 **Purpose:**
 This GPO grants the `IT_Admins` group RDP access to `aliceVM635` through the "Allow log on through Remote Desktop Services" user right, confirmed by group membership carrying into a fresh Kerberos ticket at logon. The same GPO also applies "Interactive logon: Machine inactivity limit," set to lock the screen after 100 seconds of no activity — a separate security control from the RDP right itself, forcing the session to relock and require credentials again if the machine sits idle. Together, these confirm both halves of access control on this policy: **who** is allowed to remote in, and **how** idle sessions get automatically secured without manual intervention.
