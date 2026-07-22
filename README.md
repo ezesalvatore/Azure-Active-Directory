@@ -80,11 +80,11 @@ The Safe Mode Administrator Password is a separate credential used only for Dire
 
 **Purpose:**
 
-📄 Script: [`create-organizationalUnit/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-organizationalUnit)
+📄 Script: [`create-organizationalUnit/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-organizationalUnit.ps1)
 
 An Organizational Unit (OU) is a container inside Active Directory used to organize users, computers, and groups by department, location, or function. OUs exist mainly for management and policy targeting. You link a Group Policy Object (GPO) to an OU, and every user or computer inside that OU automatically inherits it. This is how role-based access gets applied at scale instead of configuring machines one by one.
 
-📄 Script: [`create-securityGroup/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-securityGroup)
+📄 Script: [`create-securityGroup/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-securityGroup.ps1)
 
 Security groups serve a related but different purpose: controlling access to resources, like file shares, printers, or applications. A user's OU determines *which policies apply to them*; their group membership determines *what they're allowed to access*.
 
@@ -94,7 +94,7 @@ Security groups serve a related but different purpose: controlling access to res
 
 **Purpose:** 
 
-📄 Script: [`create-users/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-users)
+📄 Script: [`create-users/`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/create-users.ps1)
 
 Creating the user with `New-ADUser` and placing it in an OU via `-Path` is what ties that account to Group Policy. GPOs are linked to OUs, not individual users, so the moment an account lands in `OU=IT`, it's automatically in scope for every policy linked there. No extra step is needed; it just applies on the next Group Policy refresh or reboot.
 
