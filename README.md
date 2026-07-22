@@ -151,21 +151,13 @@ Group Policy is how settings get enforced across every machine and user in the d
 ## Phase 3 – Testing the Environment
 
 ### DNS Configuration & VNet Networking
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/7af04124-c00c-45ef-b434-508aea568817" />
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/d0043370-a194-4735-be9d-970df962e626" />
 
-**Purpose:**
-`aliceVM635` was deployed into the same VNet as the domain controller (`testVM`), which is what makes domain join possible in the first place — a machine has to be network-adjacent to the DC before it can even attempt to authenticate against it. Azure VMs default to Azure-provided DNS, which has no knowledge of `ezesalvatore.local`, so the VNet's DNS settings were changed to Custom and pointed at the DC's private IP. This is the step that lets any machine on the VNet resolve the domain name to an actual server before anything else can happen.
-
----
-
-### Domain Join
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/7373733c-a499-492d-ac42-d6d9e6d65b1a" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/37ebdad0-9941-423d-91ad-44a37f34d3d3" />
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/8eb476ac-0970-48b4-aa26-352bdc8267a6" />
 
 **Purpose:**
+
 To allow the computers to communicate with each other, I needed to make sure the network topology and DNS resolution were configured correctly.
 
 1. Updated the virtual network's DNS settings, changing from Azure's default DNS to a custom setting pointing at the private IP of `ezesalvatoreVM` (`10.0.0.4`), the domain controller running AD DS. This ensures all VMs in the VNet resolve names through Active Directory instead of Azure's default DNS.
@@ -174,14 +166,14 @@ To allow the computers to communicate with each other, I needed to make sure the
 
 ---
 
-### Configuring IT_Admins can log in
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/ba5a84cd-a111-4542-a2c0-a94879cd8ea0" />
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/ff571597-2e37-4eea-904a-e59d5de8177d" />
+### Domain Join computer to ezesalvatore.local 
 
 **Purpose:**
-Before testing the GPO itself, I confirmed `aliceVM635` was actually in scope: correctly joined to `ezesalvatore.local` and sitting in the intended OU, so any policy linked there would apply on the next Group Policy refresh or reboot. A Domain Controller isn't meant to double as a general test endpoint, which is exactly why this second VM existed — to prove a GPO reaches a real machine and user, not just that it's linked in AD.
+
+📄 Script: [`joining-domain.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/joining-domain.ps1)
+
+The use of the joining-domain script will be used to help with the 
+
 
 ---
 
