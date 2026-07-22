@@ -160,9 +160,6 @@ Group Policy is how settings get enforced across every machine and user in the d
 ---
 
 ### Domain Join
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/9042898d-b13a-45ba-863f-e818558d9ad4" />
-
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/4d4b215a-fbde-4861-bf98-24db0ef9f1fc" />
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/7373733c-a499-492d-ac42-d6d9e6d65b1a" />
 
