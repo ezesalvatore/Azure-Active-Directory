@@ -160,13 +160,13 @@ Group Policy is how settings get enforced across every machine and user in the d
 ---
 
 ### Domain Join
-<img width="911" height="181" alt="image" src="https://github.com/user-attachments/assets/9042898d-b13a-45ba-863f-e818558d9ad4" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/9042898d-b13a-45ba-863f-e818558d9ad4" />
 
-<img width="1210" height="305" alt="image" src="https://github.com/user-attachments/assets/4d4b215a-fbde-4861-bf98-24db0ef9f1fc" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/4d4b215a-fbde-4861-bf98-24db0ef9f1fc" />
 
-<img width="544" height="208" alt="image" src="https://github.com/user-attachments/assets/7373733c-a499-492d-ac42-d6d9e6d65b1a" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/7373733c-a499-492d-ac42-d6d9e6d65b1a" />
 
-<img width="552" height="521" alt="image" src="https://github.com/user-attachments/assets/8eb476ac-0970-48b4-aa26-352bdc8267a6" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/8eb476ac-0970-48b4-aa26-352bdc8267a6" />
 
 **Purpose:**
 To allow the computers to communicate with each other, I needed to make sure the network topology and DNS resolution were configured correctly.
@@ -178,13 +178,11 @@ To allow the computers to communicate with each other, I needed to make sure the
 ---
 
 ### Configuring IT_Admins can log in
-<img width="742" height="344" alt="image" src="https://github.com/user-attachments/assets/7c455541-a312-464d-8e7c-e1b2413d83e2" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/7c455541-a312-464d-8e7c-e1b2413d83e2" />
 
-<img width="742" height="344" alt="image" src="https://github.com/user-attachments/assets/ba5a84cd-a111-4542-a2c0-a94879cd8ea0" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ba5a84cd-a111-4542-a2c0-a94879cd8ea0" />
 
-<img width="1077" height="613" alt="image" src="https://github.com/user-attachments/assets/ff571597-2e37-4eea-904a-e59d5de8177d" />
-
-
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ff571597-2e37-4eea-904a-e59d5de8177d" />
 
 **Purpose:**
 Before testing the GPO itself, I confirmed `aliceVM635` was actually in scope: correctly joined to `ezesalvatore.local` and sitting in the intended OU, so any policy linked there would apply on the next Group Policy refresh or reboot. A Domain Controller isn't meant to double as a general test endpoint, which is exactly why this second VM existed — to prove a GPO reaches a real machine and user, not just that it's linked in AD.
