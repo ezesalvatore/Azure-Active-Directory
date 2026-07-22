@@ -159,11 +159,21 @@ Group Policy is how settings get enforced across every machine and user in the d
 
 ---
 
-### Domain Join & GPO Scope
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/67dca6fd-4dbe-4ceb-9475-b8e58d19b4a1" />
+### Domain Join
+<img width="911" height="181" alt="image" src="https://github.com/user-attachments/assets/9042898d-b13a-45ba-863f-e818558d9ad4" />
+
+<img width="1210" height="305" alt="image" src="https://github.com/user-attachments/assets/4d4b215a-fbde-4861-bf98-24db0ef9f1fc" />
+
+<img width="544" height="208" alt="image" src="https://github.com/user-attachments/assets/7373733c-a499-492d-ac42-d6d9e6d65b1a" />
+
+<img width="552" height="521" alt="image" src="https://github.com/user-attachments/assets/8eb476ac-0970-48b4-aa26-352bdc8267a6" />
 
 **Purpose:**
-With DNS resolving correctly, `aliceVM635` was joined to the domain. Domain join alone isn't enough to bring a machine into policy scope, though — the computer object also had to be moved into the correct OU on the DC, since GPOs are linked to OUs, not to the domain as a whole. This sequence — **DNS → domain join → OU placement** — mirrors exactly how GPO scoping works in a real environment: without all three steps in order, the machine can join the domain but never actually pull the policy meant for it.
+To allow the computers to communicate with each other, I needed to make sure the network topology and DNS resolution were configured correctly.
+
+1. Updated the virtual network's DNS settings, changing from Azure's default DNS to a custom setting pointing at the private IP of `ezesalvatoreVM` (`10.0.0.4`), the domain controller running AD DS. This ensures all VMs in the VNet resolve names through Active Directory instead of Azure's default DNS.
+2. Created `aliceVM` to represent an IT admin's workstation and confirmed it was deployed in the same virtual network as `ezesalvatoreVM`. VMs must share a virtual network and use the domain controller as their DNS server to see each other and complete a domain join.
+3. Ran `nslookup` from `aliceVM` and confirmed it could resolve `ezesalvatoreVM`, validating DNS was correctly pointed at AD before the domain join.
 
 ---
 
