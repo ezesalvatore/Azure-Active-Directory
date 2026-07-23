@@ -152,9 +152,9 @@ Group Policy is how settings get enforced across every machine and user in the d
 
 ### DNS Configuration & VNet Networking
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/37ebdad0-9941-423d-91ad-44a37f34d3d3" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/37ebdad0-9941-423d-91ad-44a37f34d3d3" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/8eb476ac-0970-48b4-aa26-352bdc8267a6" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/8eb476ac-0970-48b4-aa26-352bdc8267a6" />
 
 **Purpose:**
 
@@ -166,7 +166,7 @@ To allow the computers to communicate with each other, I needed to make sure the
 
 ---
 
-### Domain Join computer to ezesalvatore.local 
+### 
 
 **Purpose:**
 
