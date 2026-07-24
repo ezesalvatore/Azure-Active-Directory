@@ -10,7 +10,7 @@ Systems Administrator lab standing up centralized identity and access management
 - **AD DS Deployment:** Provisioned a Windows Server 2025 VM in Azure, promoted to domain controller, standing up the `ezesalvatore.local` forest with the DC also serving as DNS
 - **OU Structure:** Designed OUs to separate policy targeting from resource access
 - **RBAC:** Created security groups for resource access control
-- **Automated Provisioning:** Scripted user creation with PowerShell (`New-ADUser`), scoped to OU via `-Path`
+- **PowerShell Automation:** Scripted the full build from DC promotion, OU/group setup, provisioning, domain join.
 - **GPO Enforcement:** Linked GPOs for RDP logon rights and inactivity-based screen lock
 - **Server Onboarding:** Joined `aliceVM635` to the domain, resolved DNS, moved computer object into correct OU
 - **End-to-End Validation:** Verified via live RDP session
@@ -33,13 +33,10 @@ This is the Azure portal VM creation screen, where I'm provisioning a Windows Se
 
 **Size:** Standard_D2als_v7 - 2 vcpus, 4 GiB memory - Cost Optimization 
 
-**Public inbound ports:** RDP (3389) - Security Optimization
-
 ---
 
 ### Creation of Azure Active Directory
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/f5764a20-c0e8-408d-8164-fe7c3e5c62eb" />
-
 
 **Purpose:**
 
