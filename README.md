@@ -166,14 +166,25 @@ To allow the computers to communicate with each other, I needed to make sure the
 
 ---
 
-### 
+### Domain Join, OU Placement & Remote Access Configuration
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/84cc0136-7326-4f27-929c-ac5ba5c74fec" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/e7b725c2-fd9a-4c9e-af55-88e55586d000" />
+
 
 **Purpose:**
 
 📄 Script: [`joining-domain.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/joining-domain.ps1)
 
-The use of the joining-domain script will be used to help with the 
+This script joins `aliceVM` to the `ezesalvatore.local` domain, prompting for domain administrator credentials to authenticate the request before restarting to complete the join. By default, a newly joined computer lands in the built-in Computers container rather than an organizational unit.
 
+📄 Script: [`add-ComputertoOU.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/add-ComputertoOU.ps1)
+
+Since `aliceVM` initially lands in the default Computers container after joining the domain, this script moves it into the `IT` OU. Placing the computer object in the correct OU is what allows it to inherit and be enforced by any GPOs linked there.
+
+📄 Script: [`configure-RemoteUser.ps1`](https://github.com/ezesalvatore/Azure-Active-Directory/blob/main/powershellScripts/configure-RemoteUser.ps1)
+
+To verify the GPO is being applied correctly, members of the `IT_Admins` group need remote access to `aliceVM`. This script adds the `IT_Admins` domain security group to the local Remote Desktop Users group on the machine, allowing users like `alice.chen` to RDP in and confirm the computer and GPO are functioning as expected.
 
 ---
 
