@@ -13,7 +13,7 @@ Systems Administrator lab standing up centralized identity and access management
 - **Automated Provisioning:** Scripted user creation with PowerShell (`New-ADUser`), scoped to OU via `-Path`
 - **GPO Enforcement:** Linked GPOs for RDP logon rights and inactivity-based screen lock
 - **Server Onboarding:** Joined `aliceVM635` to the domain, resolved DNS, moved computer object into correct OU
-- **End-to-End Validation:** Verified via live RDP session — group-based access control and idle lockout confirmed working
+- **End-to-End Validation:** Verified via live RDP session
 
 ---
 ### Project Architecture - Network Topology
