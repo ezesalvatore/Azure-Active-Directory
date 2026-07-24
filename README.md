@@ -1,4 +1,4 @@
-# Active Directory Lab: IAM on Azure
+# Active Directory Lab built with Powershell
 
 ---
 ### Overview
@@ -191,9 +191,9 @@ To verify the GPO is being applied correctly, members of the `IT_Admins` group n
 ### Confirmation GPO Is Working: Live RDP Session
 <img width="1110" height="607" alt="image" src="https://github.com/user-attachments/assets/12749749-0b7d-4a10-b216-187b53b6d432" />
 
+**Purpose:** 
 
-**Purpose:**
-This GPO grants the `IT_Admins` group RDP access to `aliceVM635` through the "Allow log on through Remote Desktop Services" user right, confirmed by group membership carrying into a fresh Kerberos ticket at logon. The same GPO also applies "Interactive logon: Machine inactivity limit," set to lock the screen after 100 seconds of no activity — a separate security control from the RDP right itself, forcing the session to relock and require credentials again if the machine sits idle. Together, these confirm both halves of access control on this policy: **who** is allowed to remote in, and **how** idle sessions get automatically secured without manual intervention.
+This screenshot confirms the GPO linked to the IT OU is being enforced on `aliceVM`. The domain user is able to log on through RDP using domain credentials, and after a period of inactivity the screen locks automatically — confirming both halves of the policy are applying correctly: the logon right and the inactivity lockout.
 
 ---
 
