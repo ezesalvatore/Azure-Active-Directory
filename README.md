@@ -1,11 +1,15 @@
 # Azure AD Lab: IAM, GPO & PowerShell Automation
 
 ---
-### Overview
+## Overview
 
-Systems Administrator lab standing up centralized identity and access management for `ezesalvatore.local`.
+### **Business Case**
 
-**Work performed:**
+**The problem:** without centralized identity management, every new hire, permission change, and security policy has to be configured manually per machine — slow, inconsistent, and hard to audit.
+**The solution:** this lab implements Active Directory as the central identity authority, with OU-based policy targeting and group-based access control, so onboarding, policy enforcement, and access management all scale automatically.
+
+
+### **Work performed:**
 
 - **AD DS Deployment:** Provisioned a Windows Server 2025 VM in Azure, promoted to domain controller, standing up the `ezesalvatore.local` forest with the DC also serving as DNS
 - **OU Structure:** Designed OUs to separate policy targeting from resource access
