@@ -1,4 +1,4 @@
-# Active Directory Lab built with Powershell
+# Azure AD Lab: IAM, GPO & PowerShell Automation
 
 ---
 ### Overview
