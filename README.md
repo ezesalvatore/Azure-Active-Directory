@@ -6,16 +6,7 @@
 ### Business Problem
 
 Without centralized identity management, businesses struggle to securely onboard and offboard 
-users, apply consistent security policy, and control access at scale. Common consequences include:
-
-- **Orphaned accounts** — when an employee leaves, access often doesn't get fully revoked across 
-  every system, creating one of the most common real-world breach vectors
-- **Inconsistent security posture** — policies configured machine-by-machine means gaps are 
-  inevitable, and attackers look for exactly that kind of inconsistency
-- **Slow, error-prone onboarding** — manually provisioning access per system is easy to get wrong, 
-  whether that means over-provisioning access or missing something a new hire actually needs
-- **No single source of truth** — IT can't quickly answer "who has access to what, and why," 
-  which becomes a compliance risk in regulated environments
+users, apply consistent security policy, and control access at scale. 
 
 ### Business Solution
 
