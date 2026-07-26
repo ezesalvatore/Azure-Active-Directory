@@ -15,7 +15,7 @@ This lab implements Active Directory as the central identity authority: onboardi
 
 ### **Work performed:**
 
-- **AD DS Deployment:** Provisioned a Windows Server 2025 VM in Azure and promoted it to domain controller for `ezesalvatore.local`, with the DC also serving as DNS server so workstations can resolve domain services and join under it.
+- **AD DS Deployment:** Configured a VM in Azure and promoted it to domain controller for the `ezesalvatore.local` domain, with the DC also serving as DNS so workstations can locate and join the domain.
 - **OU Structure:** Designed OUs to separate policy targeting from resource access
 - **RBAC:** Created security groups for resource access control
 - **PowerShell Automation:** Scripted the full build from DC promotion, OU/group setup, provisioning, domain join.
