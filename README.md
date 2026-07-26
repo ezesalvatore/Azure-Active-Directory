@@ -1,6 +1,9 @@
 # Azure AD Lab
 
 ---
+## Walkthrough: https://www.loom.com/share/7f21d41d607843a5bad90be4f0a7109e
+
+---
 ## Overview
 
 ### Business Problem
