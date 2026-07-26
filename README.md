@@ -18,8 +18,8 @@ This lab implements Active Directory as the central identity authority: onboardi
 - **AD DS Deployment:** Configured a VM in Azure and promoted it to domain controller for the `ezesalvatore.local` domain, with the DC also serving as DNS so workstations can locate and join the domain.
 - **OU Structure:** Designed OUs to separate policy targeting from resource access
 - **RBAC:** Created security groups for resource access control
-- **PowerShell Automation:** Scripted the full build from DC promotion, OU/group setup, provisioning, domain join.
-- **GPO Enforcement:** Linked GPOs for RDP logon rights and inactivity-based screen lock
+- **PowerShell Automation:** Scripted the full build from DC promotion, OU/group setup, user provisioning, domain join.
+- **GPO Enforcement:** Linked GPOs for RDP logon rights, inactivity-based screen lock, and password policy
 - **Server Onboarding:** Joined `aliceVM635` to the domain, resolved DNS, moved computer object into correct OU
 - **End-to-End Validation:** Verified via live RDP session
 
