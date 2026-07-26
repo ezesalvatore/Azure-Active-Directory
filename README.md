@@ -10,19 +10,7 @@ users, apply consistent security policy, and control access at scale.
 
 ### Business Solution
 
-This lab solves that by implementing Active Directory as the central identity authority, using 
-OU-based policy targeting and group-based access control. The result:
-
-- **Consistency at scale** — every user is provisioned the same way, with the same baseline 
-  policy, regardless of who sets it up
-- **Fast, clean onboarding/offboarding** — access is tied to group membership, so disabling one 
-  account cuts off every downstream system immediately
-- **Automatic policy enforcement** — password complexity, screen lock timers, and RDP access 
-  rights are set once at the OU level and inherited automatically by everything underneath it
-- **Least-privilege access** — group-based permissions ensure users only get access to what 
-  their role requires
-- **Auditability** — a single identity system makes it possible to answer access questions in 
-  minutes, which matters for compliance in regulated industries like healthcare and federal I
+This lab implements Active Directory as the central identity authority — using OU-based policy targeting and group-based access control so onboarding, policy enforcement, and access management all scale automatically.
 
 
 ### **Work performed:**
