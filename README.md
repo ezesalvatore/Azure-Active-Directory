@@ -10,7 +10,7 @@ users, apply consistent security policy, and control access at scale.
 
 ### Business Solution
 
-This lab implements Active Directory as the central identity authority — using OU-based policy targeting and group-based access control so onboarding, policy enforcement, and access management all scale automatically.
+This lab implements Active Directory as the central identity authority: onboarding, policy, and access control are enforced and scaled automatically.
 
 
 ### **Work performed:**
