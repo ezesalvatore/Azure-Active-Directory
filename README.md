@@ -3,11 +3,35 @@
 ---
 ## Overview
 
-### **Business Case**
+### Business Problem
 
-**The problem:** Without centralized identity management, securely onboarding and offboarding users becomes slow, inconsistent, and hard to audit.
+Without centralized identity management, businesses struggle to securely onboard and offboard 
+users, apply consistent security policy, and control access at scale. Common consequences include:
 
-**The solution:** This lab implements Active Directory as the central identity authority, using OU-based policy targeting and group-based access control so onboarding, policy enforcement, and access management all scale automatically.
+- **Orphaned accounts** — when an employee leaves, access often doesn't get fully revoked across 
+  every system, creating one of the most common real-world breach vectors
+- **Inconsistent security posture** — policies configured machine-by-machine means gaps are 
+  inevitable, and attackers look for exactly that kind of inconsistency
+- **Slow, error-prone onboarding** — manually provisioning access per system is easy to get wrong, 
+  whether that means over-provisioning access or missing something a new hire actually needs
+- **No single source of truth** — IT can't quickly answer "who has access to what, and why," 
+  which becomes a compliance risk in regulated environments
+
+### Business Solution
+
+This lab solves that by implementing Active Directory as the central identity authority, using 
+OU-based policy targeting and group-based access control. The result:
+
+- **Consistency at scale** — every user is provisioned the same way, with the same baseline 
+  policy, regardless of who sets it up
+- **Fast, clean onboarding/offboarding** — access is tied to group membership, so disabling one 
+  account cuts off every downstream system immediately
+- **Automatic policy enforcement** — password complexity, screen lock timers, and RDP access 
+  rights are set once at the OU level and inherited automatically by everything underneath it
+- **Least-privilege access** — group-based permissions ensure users only get access to what 
+  their role requires
+- **Auditability** — a single identity system makes it possible to answer access questions in 
+  minutes, which matters for compliance in regulated industries like healthcare and federal I
 
 
 ### **Work performed:**
