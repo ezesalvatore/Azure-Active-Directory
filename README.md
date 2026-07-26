@@ -5,9 +5,9 @@
 
 ### **Business Case**
 
-**The problem:** without centralized identity management, every new hire, permission change, and security policy has to be configured manually per machine — slow, inconsistent, and hard to audit.
+**The problem:** Without centralized identity management, securely onboarding and offboarding users becomes slow, inconsistent, and hard to audit.
 
-**The solution:** this lab implements Active Directory as the central identity authority, with OU-based policy targeting and group-based access control, so onboarding, policy enforcement, and access management all scale automatically.
+**The solution:** This lab implements Active Directory as the central identity authority, using OU-based policy targeting and group-based access control so onboarding, policy enforcement, and access management all scale automatically.
 
 
 ### **Work performed:**
