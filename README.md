@@ -1,4 +1,4 @@
-# Azure AD Lab: IAM, GPO & PowerShell Automation
+# Azure AD Lab
 
 ---
 ## Overview
