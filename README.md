@@ -12,7 +12,7 @@
 
 ### **Work performed:**
 
-- **AD DS Deployment:** Provisioned a Windows Server 2025 VM in Azure, promoted to domain controller, standing up the `ezesalvatore.local` forest with the DC also serving as DNS
+- **AD DS Deployment:** Provisioned a Windows Server 2025 VM in Azure and promoted it to domain controller for `ezesalvatore.local`, with the DC also serving as DNS so workstations can resolve domain services and join under it.
 - **OU Structure:** Designed OUs to separate policy targeting from resource access
 - **RBAC:** Created security groups for resource access control
 - **PowerShell Automation:** Scripted the full build from DC promotion, OU/group setup, provisioning, domain join.
